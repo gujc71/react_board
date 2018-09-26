@@ -3,13 +3,18 @@
 This example is web boards focusing on data input / output for easy understanding of React.
 
 
-App1: simple list
-App2: simple list
-App3: formed list with Table tag and component
-App4: add board (post)
-App5: delete & update a Item(Row)
-App6: component files
+### Files ###
+- App1.js: simple list
+- App2.js: simple list
+- App3.js: formed list with Table tag and component
+- App4.js: add board (create)
+- App5.js: delete & update a Item(Row)
+- App6.js: component files
 
+### Other Examples ###
+- [react_board](https://github.com/gujc71/react_board): this
+- [reduct_board](https://github.com/gujc71/reduct_board): simple board(CRUD) examples for React + Redux
+- [react_firestore](https://github.com/gujc71/react_firestore): simple board(CRUD) examples for React(Redux) + Firestore
 
 ### Install & Run ###
 - git clone https://github.com/gujc71/react_board.git
