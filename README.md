@@ -13,7 +13,7 @@ This example is web boards focusing on data input / output for easy understandin
 
 ### Other Examples ###
 - [react_board](https://github.com/gujc71/react_board): this
-- [reduct_board](https://github.com/gujc71/reduct_board): simple board(CRUD) examples for React + Redux
+- [redux_board](https://github.com/gujc71/redux_board): simple board(CRUD) examples for React + Redux
 - [react_firestore](https://github.com/gujc71/react_firestore): simple board(CRUD) examples for React(Redux) + Firestore
 
 ### Install & Run ###
