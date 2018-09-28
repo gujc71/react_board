@@ -1,61 +1,61 @@
 import React, { Component } from 'react';
 
 /*
-	formed list with Table tag and component
+    formed list with Table tag and component
 */
 class App3 extends Component {
-	state = {
-		maxNo: 3,
-		board: [
-			{
-				id: 1,
-				name: 'Lee SunSin',
-				title: 'If you intend to live then you die',
-				date: new Date()
-			},
-			{
-				id: 2,
-				name: 'So SiNo',
-				title: 'Founder for two countries',
-				date: new Date()
-			}
-		]
-	}
+    state = {
+        maxNo: 3,
+        boards: [
+            {
+                brdno: 1,
+                brdwriter: 'Lee SunSin',
+                brdtitle: 'If you intend to live then you die',
+                brddate: new Date()
+            },
+            {
+                brdno: 2,
+                brdwriter: 'So SiNo',
+                brdtitle: 'Founder for two countries',
+                brddate: new Date()
+            }
+        ]
+    }
   
-	render() {
-		const { board } = this.state;
+    render() {
+        const { boards } = this.state;
 
-		return (
-			<div>
-				<table border="1">
-					<tbody>
-					<tr align="center">
-						<td width="50">No.</td>
-						<td width="300">Title</td>
-						<td width="100">Name</td>
-						<td width="100">Date</td>
-					</tr>
+        return (
+            <div>
+                <table border="1">
+                    <tbody>
+                    <tr align="center">
+                        <td width="50">No.</td>
+                        <td width="300">Title</td>
+                        <td width="100">Name</td>
+                        <td width="100">Date</td>
+                    </tr>
                     {
-						board.map(row =>
-							(<BoardItem key={row.id} row={row} />)
-						)
+                        boards.map(row =>
+                            (<BoardItem key={row.brdno} row={row} />)
+                        )
                     }
-					</tbody>
+                    </tbody>
                 </table>
-			</div>
-		);
-	}
+            </div>
+        );
+    }
 }
 
 class BoardItem extends React.Component {
     render() {
         return(
             <tr>
-				<td>{this.props.row.id}</td>
-				<td>{this.props.row.title}</td>
-				<td>{this.props.row.name}</td>
-				<td>{this.props.row.date.toLocaleDateString('ko-KR')}</td>
-			</tr>
+                <td>{this.props.row.brdno}</td>
+                <td>{this.props.row.brdtitle}</td>
+                <td>{this.props.row.brdwriter}</td>
+                <td>{this.props.row.brddate.toLocaleDateString('ko-KR')}</td>
+            </tr>
         );
     }
 }

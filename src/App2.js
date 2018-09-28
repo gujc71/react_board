@@ -3,37 +3,37 @@ import React, { Component } from 'react';
  simple list
  */
 class App2 extends Component {
-	state = {
-		maxNo: 3,
-		board: [
-			{
-				id: 1,
-				name: 'Lee SunSin',
-				title: 'If you intend to live then you die',
-				date: new Date()
-			},
-			{
-				id: 2,
-				name: 'So SiNo',
-				title: 'Founder for two countries',
-				date: new Date()
-			}
-		]
-	}
+    state = {
+        maxNo: 3,
+        boards: [
+            {
+                brdno: 1,
+                brdwriter: 'Lee SunSin',
+                brdtitle: 'If you intend to live then you die',
+                brddate: new Date()
+            },
+            {
+                brdno: 2,
+                brdwriter: 'So SiNo',
+                brdtitle: 'Founder for two countries',
+                brddate: new Date()
+            }
+        ]
+    }
   
-	render() {
-		const { board } = this.state;
+    render() {
+        const { boards } = this.state;
 
-		return (
-			<div>
-			{
-				board.map(function(row){ 
-					return row.id + row.name ;
-				}) 
-			}
-			</div>
-		);
-	}
+        return (
+            <div>
+            {
+                boards.map(function(row){ 
+                    return row.brdno + row.brdwriter ;
+                }) 
+            }
+            </div>
+        );
+    }
 }
 
 export default App2;

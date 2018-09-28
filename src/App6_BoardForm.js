@@ -2,40 +2,43 @@ import React, { Component } from 'react';
 
 
 class BoardForm extends Component {
-	state = {
-		name:'',
-		title:''		
-	}
-	
-	handleChange = (e) => {
-		this.setState({
-			[e.target.name]: e.target.value
-		})
-	}
-	
-	handleUpdateForm = (row) => {
-		this.setState(row);
-	}
-	
-	handleSubmit = (e) => {
-		e.preventDefault();
-		this.props.onSaveData(this.state);
-		this.setState({
-			id:'',
-			name:'',
-			title:''
-		});
+    
+    shouldComponentUpdate(nextProps, nextState) {
+        let selectedBoard = nextProps.selectedBoard;
+        if (!selectedBoard.brdno) {
+            this.brdtitle.value = "";
+            this.brdwriter.value = "";        
+            return true;
+        }
+        
+        this.brdtitle.value = selectedBoard.brdtitle;
+        this.brdwriter.value = selectedBoard.brdwriter;        
+        return true;
     }
-	
-	render() {
-		return (
-			<form onSubmit={this.handleSubmit}>
-				<input placeholder="title" name="title" value={this.state.title} onChange={this.handleChange}/>
-				<input placeholder="name" name="name" value={this.state.name} onChange={this.handleChange}/>
-				<button type="submit">Save</button>
-			</form>
-		);
-	}
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        let selectedBoard = this.props.selectedBoard;
+        let data = {
+            brdwriter: this.brdwriter.value,
+            brdtitle: this.brdtitle.value
+        }
+        if (selectedBoard.brdno) {
+            data.brdno = selectedBoard.brdno
+            data.brddate = selectedBoard.brddate
+        }        
+        this.props.onSaveData(data);
+    }
+    
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <input placeholder="title" ref={node => this.brdtitle = node}/>
+                <input placeholder="name" ref={node => this.brdwriter = node}/>
+                <button type="submit">Save</button>
+            </form>
+        );
+    }
 }
 
 export default BoardForm;
