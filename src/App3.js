@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 */
 class App3 extends Component {
     state = {
-        maxNo: 3,
         boards: [
             {
                 brdno: 1,
