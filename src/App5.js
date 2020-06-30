@@ -32,7 +32,7 @@ class App5 extends Component {
         if (data.brdno ===null || data.brdno==='' || data.brdno===undefined) {    // new : Insert
             this.setState({
                 maxNo: this.state.maxNo+1,
-                boards: boards.concat({brdno: this.state.maxNo, brddate: new Date(), ...data })
+				boards: boards.concat({brdno: this.state.maxNo, brddate: new Date(), brdwriter: data.brdwriter, brdtitle: data.brdtitle })				
             });
         } else {                                                        // Update
             this.setState({
